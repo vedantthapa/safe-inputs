@@ -28,11 +28,10 @@
         enabled: false,
       },
     },
-  ],
     {
       "description": "Automerge all patch or pinning updates",
       "matchUpdateTypes": ["patch", "digest", "pinDigest"],
       "automerge": true
     },
-  ]
+  ],
 }
