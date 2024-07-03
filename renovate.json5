@@ -33,7 +33,8 @@
       "matchUpdateTypes": ["patch", "digest", "pinDigest"],
       "automerge": true,
       "ignoreTests": true,
-      "automergeType": "branch"
+      "automergeType": "branch",
+      "addLabels": ["automerge"]
     },
   ],
 }
