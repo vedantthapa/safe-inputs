@@ -1,6 +1,6 @@
 steps:
   - id: 'Check types'
-    name: 'node:lts-alpine3.19@sha256:e0ea1e2299d3e4b214ba91a0c1b773f2369ba4ff39cb0b4d3000c2b72ee8334e'
+    name: 'node:lts-alpine3.19@sha256:2d8c24d9104bda27e07dced6d7110aa728dd917dde8255d8af3678e532b339d6'
     entrypoint: 'sh'
     dir: api
     args:
