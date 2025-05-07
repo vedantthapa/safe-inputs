@@ -1,40 +1,40 @@
 {
-  $schema: 'https://docs.renovatebot.com/renovate-schema.json',
+  $schema: "https://docs.renovatebot.com/renovate-schema.json",
   extends: [
-    'config:best-practices',
-    ':dependencyDashboard',
-    ':semanticCommits',
-    ':semanticCommitScopeDisabled',
+    "config:best-practices",
+    ":dependencyDashboard",
+    ":semanticCommits",
+    ":semanticCommitScopeDisabled",
   ],
-  dependencyDashboardTitle: 'Renovate Dashboard 🤖',
+  dependencyDashboardTitle: "Renovate Dashboard 🤖",
   flux: {
-    fileMatch: ['(^|/)kubernetes/.+\\.ya?ml(?:\\.j2)?$'],
+    managerFilePatterns: ["/(^|/)kubernetes/.+\\.ya?ml(?:\\.j2)?$/"],
   },
   kubernetes: {
-    fileMatch: ['(^|/)kubernetes/.+\\.ya?ml(?:\\.j2)?$'],
+    managerFilePatterns: ["/(^|/)kubernetes/.+\\.ya?ml(?:\\.j2)?$/"],
   },
-  'helm-values': {
-    fileMatch: ['(^|/)kubernetes/.+\\.ya?ml(?:\\.j2)?$'],
+  "helm-values": {
+    managerFilePatterns: ["/(^|/)kubernetes/.+\\.ya?ml(?:\\.j2)?$/"],
   },
   packageRules: [
     {
-      description: 'Ignore pinning for images managed by Flux',
+      description: "Ignore pinning for images managed by Flux",
       matchPackageNames: [
-        'northamerica-northeast1-docker.pkg.dev/pdcp-cloud-005-safeinputs/safeinputs/api',
-        'northamerica-northeast1-docker.pkg.dev/pdcp-cloud-005-safeinputs/safeinputs/ui',
+        "northamerica-northeast1-docker.pkg.dev/pdcp-cloud-005-safeinputs/safeinputs/api",
+        "northamerica-northeast1-docker.pkg.dev/pdcp-cloud-005-safeinputs/safeinputs/ui",
       ],
-      matchUpdateTypes: ['pinDigest'],
+      matchUpdateTypes: ["pinDigest"],
       pinDigest: {
         enabled: false,
       },
     },
     {
-      "description": "Automerge all patch or pinning updates",
-      "matchUpdateTypes": ["patch", "digest", "pinDigest"],
-      "automerge": true,
-      "ignoreTests": true,
-      "automergeType": "branch",
-      "addLabels": ["automerge"]
+      description: "Automerge all patch or pinning updates",
+      matchUpdateTypes: ["patch", "digest", "pinDigest"],
+      automerge: true,
+      ignoreTests: true,
+      automergeType: "branch",
+      addLabels: ["automerge"],
     },
   ],
 }
